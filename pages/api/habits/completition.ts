@@ -7,7 +7,7 @@ import { withAuthentication } from "lib/server/auth-middleware";
 export default async function awsRegion(req: NextApiRequest, res: NextApiResponse) {
   await withAuthentication(req, res, async () => {
     await withMethodVerification(["PUT"], req, res, async () => {
-      const { habitId, completitionAttributes } = req.body;
+      const { habitId, ...completitionAttributes } = req.body;
       const date = new Date();
 
       if (!habitId)
