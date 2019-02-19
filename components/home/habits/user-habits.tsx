@@ -42,7 +42,7 @@ export function UserHabits() {
   return (
     <div className='grid gap-4 mt-4'>
       <h2 className='font-semibold'>Follow your habits</h2>
-      {data?.data.data.map((habit: HabitsWithCompletitions) => (
+      {data?.data?.data?.map((habit: HabitsWithCompletitions) => (
         <Collapsible key={habit.id} >
           <CollapsibleTrigger className='w-full'>
             <motion.div
