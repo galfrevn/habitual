@@ -42,6 +42,7 @@ model User {
   accounts         Account[]
   sessions         Session[]
   GuestbookComment GuestbookComment[]
+  habits Habit[]
 }
 
 model VerificationToken {
@@ -62,4 +63,15 @@ model GuestbookComment {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
   content String 
   createdAt  DateTime   @default(now())
+}
+
+model Habit {
+  id String @unique @default(uuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  title String
+  decription String?
+  icon String
 }
