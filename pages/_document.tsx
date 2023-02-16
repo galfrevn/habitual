@@ -23,7 +23,7 @@ export default function Document() {
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='msapplication-TileColor' content='#FFF' />
         <meta name='msapplication-tap-highlight' content='no' />
-        <meta name='theme-color' content='#000000' />
+        <meta name='theme-color' content='#FFF' />
 
         {/* GENERAL META TAGS */}
         <meta name='title' content={TITLE} />
