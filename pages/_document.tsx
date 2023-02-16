@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
+const NAME = 'Habitual'
 const TITLE = 'Habitual | Habits tracker';
 const DESCRIPTION = `Habit tracking app designed to help users maintain healthy habits. 
 Featuring a user-friendly interface and customizable features, users can easily track their
@@ -10,11 +11,26 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
+        {/* PWA MANIFEST */}
+        <link rel="manifest" href="/manifest.json" />
+        {/* PWA METATAGS */}
+        <meta name='application-name' content={NAME} />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+        <meta name='apple-mobile-web-app-title' content={NAME} />
+        <meta name='description' content={DESCRIPTION} />
+        <meta name='format-detection' content='telephone=no' />
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta name='msapplication-config' content='/icons/browserconfig.xml' />
+        <meta name='msapplication-TileColor' content='#FFF' />
+        <meta name='msapplication-tap-highlight' content='no' />
+        <meta name='theme-color' content='#000000' />
+
         {/* GENERAL META TAGS */}
         <meta name='title' content={TITLE} />
         <title>{TITLE}</title>
         <meta name='description' content={DESCRIPTION} />
-        <meta name="theme-color" content="#FFF" />
+        <meta name='theme-color' content='#FFF' />
         <link rel='shortcut icon' href='/images/avatar.png' />
 
         {/* OPEN GRAPH */}
