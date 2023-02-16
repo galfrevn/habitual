@@ -3,8 +3,9 @@ import { HabitsSingleContainer } from 'components/home/habits/containers';
 import { CreateHabit } from 'components/home/habits/create';
 import { EditHabit } from 'components/home/habits/edit';
 import { ShareHabit } from 'components/home/habits/share';
+import { Metrics } from 'components/home/metrics';
 
-import { getServerSideSession } from 'lib/server-session';
+import { getServerSideSession } from 'lib/server/server-session';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 
 export default function Home({
@@ -18,6 +19,7 @@ export default function Home({
         <EditHabit />
         <ShareHabit />
       </HabitsSingleContainer>
+      <Metrics />
     </div>
   );
 }

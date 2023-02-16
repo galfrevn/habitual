@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 import { BuiltInProviderType } from 'next-auth/providers';
-import { LiteralUnion, signIn } from 'next-auth/react';
+import { LiteralUnion, signIn, signOut } from 'next-auth/react';
 
 import Image from 'next/image';
+import { LogOut } from 'lucide-react';
 
 export interface AuthenticationButtonProps {
   authenticationProviderLabel: string;
@@ -46,5 +47,19 @@ export const AuthenticationButton = (props: AuthenticationButtonProps) => {
         </span>
       </button>
     </Fragment>
+  );
+};
+
+export const LogoutButton = ({ label }: { label: string }) => {
+  const handleLogout = () => signOut();
+
+  return (
+    <button
+      onClick={handleLogout}
+      className='flex items-center justify-center w-full rounded-md bg-black p-3'
+    >
+      <LogOut className='w-4 text-white' />
+      <span className='ml-2 text-sm font-semibold text-white'>{label}</span>
+    </button>
   );
 };

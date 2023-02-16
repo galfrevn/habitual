@@ -1,12 +1,14 @@
 import Head from 'next/head';
-import { AppProps } from 'next/app';
 import { Outfit } from '@next/font/google';
 
-import 'styles/tailwind.css';
+import { Fragment } from 'react';
+import { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
+import { AnimatePresence } from 'framer-motion';
+
+import 'styles/tailwind.css';
 import { Header } from 'components/layout/header';
 import { AspectRatio } from 'components/ui/aspect-ratio';
-import { Fragment } from 'react';
 
 const outfit = Outfit({
   variable: '--display-font',
@@ -24,13 +26,15 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <SessionProvider>
-        <AspectRatio
-          ratio={9 / 16}
-          className={`${outfit.variable} font-display max-w-xl mx-auto`}
-        >
-          <Header />
-          <Component {...pageProps} />
-        </AspectRatio>
+        <AnimatePresence>
+          <AspectRatio
+            ratio={9 / 16}
+            className={`${outfit.variable} font-display max-w-xl mx-auto`}
+          >
+            <Header />
+            <Component {...pageProps} />
+          </AspectRatio>
+        </AnimatePresence>
       </SessionProvider>
     </Fragment>
   );

@@ -1,4 +1,4 @@
-import { getServerSideSession } from 'lib/server-session';
+import { getServerSideSession } from 'lib/server/server-session';
 import { GetServerSidePropsContext } from 'next';
 
 import { LockClosedIcon, FingerPrintIcon } from '@heroicons/react/20/solid';

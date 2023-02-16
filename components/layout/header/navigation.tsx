@@ -10,6 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from 'components/ui/navbar';
+import Link from 'next/link';
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -61,7 +62,7 @@ export function Navigation() {
             <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
               <li className='row-span-3'>
                 <NavigationMenuLink asChild>
-                  <a
+                  <Link
                     className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-green-300 via-green-400 to-blue-400 p-6 no-underline outline-none focus:shadow-md'
                     href='/'
                   >
@@ -70,11 +71,11 @@ export function Navigation() {
                       {data?.user?.name}
                     </div>
                     <p className='text-sm leading-tight text-white/90'>
-                      Congratulations! Every day you&apos;re taking steps towards a
-                      better you. Keep up the great work and remember that small
-                      consistent actions lead to big results!
+                      Congratulations! Every day you&apos;re taking steps
+                      towards a better you. Keep up the great work and remember
+                      that small consistent actions lead to big results!
                     </p>
-                  </a>
+                  </Link>
                 </NavigationMenuLink>
               </li>
               <ListItem href='/docs' title='Introduction'>

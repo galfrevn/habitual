@@ -1,17 +1,34 @@
 import Link from 'next/link';
 
+import { motion } from 'framer-motion';
+
 export function EditHabit() {
   return (
     <Link href='/habits/edit'>
-      <div className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-purple-700 to-violet-600 p-6 no-underline outline-none focus:shadow-md hover:scale-[.98] transition-all duration-100'>
-        <div className='mt-4 mb-2 text-lg font-medium text-white'>
+      <motion.div
+        key='edit-habit'
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
+        className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-purple-700 to-violet-600 p-6 no-underline outline-none focus:shadow-md hover:scale-[.98] transition-all duration-100'
+      >
+        <motion.h2
+          key='edit-habit-h2'
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
+          className='mt-4 mb-2 text-lg font-medium text-white'
+        >
           Edit a habit
-        </div>
-        <p className='text-sm leading-tight text-white/90'>
+        </motion.h2>
+        <motion.p
+          key='edit-habit-text'
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.4 } }}
+          className='text-sm leading-tight text-white/90'
+        >
           Revise your routine. Edit existing habits and stay on track towards
           your goals!
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
     </Link>
   );
 }
