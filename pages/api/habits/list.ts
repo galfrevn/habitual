@@ -17,9 +17,6 @@ export default async function awsRegion(
             id: session.user?.id
           },
         },
-        include: {
-          completitions: true
-        }
       });
 
       if (!habits)
