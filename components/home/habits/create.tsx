@@ -5,7 +5,7 @@ import { Plus } from 'lucide-react';
 
 export function CreateHabit() {
   return (
-    <Link href='/habits/tracker/new'>
+    <Link href='/habits/new' >
       <motion.div
         key='create-habit'
         initial={{ opacity: 0, y: 20 }}
