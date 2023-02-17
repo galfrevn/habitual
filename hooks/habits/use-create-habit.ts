@@ -3,9 +3,9 @@ import axios from 'axios';
 import { useState } from 'react';
 
 import { useMutation } from '@tanstack/react-query';
-import { Habit } from '@prisma/client';
+/* import { Habit } from '@prisma/client'; */
 
-const defaultHabitValues: Habit = {
+const defaultHabitValues: /* Habit */ any = {
   id: '',
   userId: '',
   title: '',
@@ -17,9 +17,9 @@ const defaultHabitValues: Habit = {
 };
 
 export const useCreateHabit = () => {
-  const [habit, setHabit] = useState<Habit>(defaultHabitValues);
+  const [habit, setHabit] = useState</* Habit */ any>(defaultHabitValues);
 
-  const createHabitFn = async (data: Habit) =>
+  const createHabitFn = async (data: /* Habit */ any) =>
     await axios.post('/api/habits/new', data);
 
   const { mutate, data, isLoading, error } = useMutation({
@@ -30,10 +30,10 @@ export const useCreateHabit = () => {
     },
   });
 
-  const updateHabitField = (key: keyof Habit, value: unknown) =>
+  const updateHabitField = (key: keyof /* Habit */ any, value: unknown) =>
     setHabit({ ...habit, [key]: value });
 
-  const returnHabitField = (key: keyof Habit) => String(habit[key]);
+  const returnHabitField = (key: keyof /* Habit */ any) => String(habit[key]);
 
   const createHabit = () => mutate();
 
