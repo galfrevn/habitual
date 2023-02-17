@@ -2,7 +2,15 @@ import  { ReactNode } from 'react'
 
 export function HabitsSingleContainer({ children }: { children: ReactNode }) {
   return (
-    <div className='mt-4 flex flex-col gap-4' >
+    <div className='mt-4 grid gap-4 md:grid-cols-2 ' >
+      {children}
+    </div>
+  )
+}
+
+export function HabitsSemiContainer({ children }: { children: ReactNode }) {
+  return (
+    <div className='grid grid-cols-2 gap-4 md:grid-cols-1 ' >
       {children}
     </div>
   )
