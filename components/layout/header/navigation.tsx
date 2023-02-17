@@ -8,6 +8,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from 'components/ui/navbar';
 import { cn } from 'lib/tailwind';
 
@@ -20,7 +21,7 @@ export function Navigation() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Your dashboards</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
+            <ul className='grid gap-3 p-6 md:w-[500px] md:grid-cols-[.75fr_1fr]'>
               <li className='row-span-3'>
                 <NavigationMenuLink asChild>
                   <Link
@@ -39,41 +40,12 @@ export function Navigation() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <li className='row-span-3'>
-                <NavigationMenuLink asChild>
-                  <Link
-                    className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-green-400 to-green-500 p-6 no-underline outline-none focus:shadow-md'
-                    href='/finances'
-                  >
-                    <Banknote className='h-6 w-6 text-white' />
-                    <div className='mt-4 mb-2 text-lg font-medium text-white'>
-                      Finances tracker
-                    </div>
-                    <p className='text-sm leading-tight text-white/90'>
-                      Congratulations! Every day you&apos;re taking steps
-                      towards a better you. Keep up the great work and remember
-                      that small consistent actions lead to big results!
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <li className='row-span-3'>
-                <NavigationMenuLink asChild>
-                  <Link
-                    className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-neutral-800 via-nuetral-900 to-black p-6 no-underline outline-none focus:shadow-md'
-                    href='/settings'
-                  >
-                    <Settings className='h-6 w-6 text-white' />
-                    <div className='my-2 text-lg font-medium text-white'>
-                      Settings
-                    </div>
-                    <p className='text-sm leading-tight text-white/90'>
-                      Personalize your settings to fit your needs and
-                      preferences.
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
+              <ListItem href='/finances' title='Finances tracker'>
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>
+              <ListItem href='/settings' title='Settings'>
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
