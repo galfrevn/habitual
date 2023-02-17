@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Settings } from 'lucide-react';
 
 export function SettingsIntro() {
   return (
@@ -6,8 +7,9 @@ export function SettingsIntro() {
       key='settings-intro'
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
-      className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-gray-700 via-gray-900 to-black p-6 no-underline outline-none focus:shadow-md transition-all duration-100'
+      className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-neutral-800 via-nuetral-900 to-black p-6 no-underline outline-none focus:shadow-md transition-all duration-100'
     >
+      <Settings className='h-6 w-6 text-white' />
       <motion.h2
         key='settings-intro-h2'
         initial={{ opacity: 0, y: 10 }}

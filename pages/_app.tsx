@@ -10,6 +10,7 @@ import 'styles/tailwind.css';
 import { Header } from 'components/layout/header';
 import { AspectRatio } from 'components/ui/aspect-ratio';
 import { BreakpointsIndicator } from 'components/layout/header/breakpoints';
+import { ThemeProvider } from 'components/context/theme';
 
 const outfit = Outfit({
   variable: '--display-font',
@@ -38,6 +39,16 @@ export default function App({ Component, pageProps }: AppProps) {
           </AspectRatio>
         </AnimatePresence>
       </SessionProvider>
+      <main className={`${outfit.variable} font-display max-w-xl mx-auto`}>
+        <ThemeProvider>
+          <SessionProvider>
+            <AnimatePresence>
+              <Header />
+              <Component {...pageProps} />
+            </AnimatePresence>
+          </SessionProvider>
+        </ThemeProvider>
+      </main>
     </Fragment>
   );
 }

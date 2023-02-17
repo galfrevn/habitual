@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';
+import { Share } from 'lucide-react';
 
 export function ShareHabit() {
   return (
@@ -11,6 +12,7 @@ export function ShareHabit() {
         animate={{ opacity: 1, y: 0, transition: { delay: 0.3 } }}
         className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-sky-400 to-blue-500 p-6 no-underline outline-none focus:shadow-md hover:scale-[.98] transition-all duration-100'
       >
+        <Share className='h-6 w-6 text-white' />
         <motion.h2
           key='share-habit-h2'
           initial={{ opacity: 0, y: 10 }}
