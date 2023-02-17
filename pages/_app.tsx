@@ -8,7 +8,6 @@ import { AnimatePresence } from 'framer-motion';
 
 import 'styles/tailwind.css';
 import { Header } from 'components/layout/header';
-import { AspectRatio } from 'components/ui/aspect-ratio';
 import { BreakpointsIndicator } from 'components/layout/header/breakpoints';
 import { ThemeProvider } from 'components/context/theme';
 
@@ -28,17 +27,6 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <BreakpointsIndicator />
-      <SessionProvider>
-        <AnimatePresence>
-          <AspectRatio
-            ratio={9 / 16}
-            className={`${outfit.variable} font-display max-w-xl mx-auto`}
-          >
-            <Header />
-            <Component {...pageProps} />
-          </AspectRatio>
-        </AnimatePresence>
-      </SessionProvider>
       <main className={`${outfit.variable} font-display max-w-xl mx-auto`}>
         <ThemeProvider>
           <SessionProvider>
