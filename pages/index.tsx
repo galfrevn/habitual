@@ -1,5 +1,8 @@
 import { TodayCalendar } from 'components/home/date';
-import { HabitsSingleContainer } from 'components/home/habits/containers';
+import {
+  HabitsSemiContainer,
+  HabitsSingleContainer,
+} from 'components/home/habits/containers';
 import { CreateHabit } from 'components/home/habits/create';
 import { EditHabit } from 'components/home/habits/edit';
 import { ShareHabit } from 'components/home/habits/share';
@@ -16,8 +19,10 @@ export default function Home({
       <TodayCalendar name={session.user?.name as string} />
       <HabitsSingleContainer>
         <CreateHabit />
-        <EditHabit />
-        <ShareHabit />
+        <HabitsSemiContainer>
+          <EditHabit />
+          <ShareHabit />
+        </HabitsSemiContainer>
       </HabitsSingleContainer>
       <Metrics />
     </div>

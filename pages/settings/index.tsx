@@ -10,9 +10,7 @@ export default function Settings({
     <div className='px-4 mt-4'>
       <SettingsIntro />
       {/* Temporal */}
-      <div className='fixed bottom-4 w-[calc(100%-32px)] ' >
-        <LogoutButton label='Log out' />
-      </div>
+      <LogoutButton label='Log out' />
     </div>
   );
 }
