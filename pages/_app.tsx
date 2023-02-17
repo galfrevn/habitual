@@ -26,17 +26,17 @@ export default function App({ Component, pageProps }: AppProps) {
           content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
         />
       </Head>
-      <BreakpointsIndicator />
-      <main className={`${outfit.variable} font-display max-w-xl mx-auto`}>
-        <ThemeProvider>
+      <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+        <BreakpointsIndicator />
+        <main className={`${outfit.variable} font-display max-w-xl mx-auto`}>
           <SessionProvider>
+            <Header />
             <AnimatePresence>
-              <Header />
               <Component {...pageProps} />
             </AnimatePresence>
           </SessionProvider>
-        </ThemeProvider>
-      </main>
+        </main>
+      </ThemeProvider>
     </Fragment>
   );
 }

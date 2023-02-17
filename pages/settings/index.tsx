@@ -10,7 +10,9 @@ export default function Settings({
     <div className='px-4 mt-4'>
       <SettingsIntro />
       {/* Temporal */}
-      <LogoutButton label='Log out' />
+      <div className='mt-4'>
+        <LogoutButton label='Log out' />
+      </div>
     </div>
   );
 }
