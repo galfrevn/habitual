@@ -9,6 +9,7 @@ import { AnimatePresence } from 'framer-motion';
 import 'styles/tailwind.css';
 import { Header } from 'components/layout/header';
 import { AspectRatio } from 'components/ui/aspect-ratio';
+import { BreakpointsIndicator } from 'components/layout/header/breakpoints';
 
 const outfit = Outfit({
   variable: '--display-font',
@@ -25,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
         />
       </Head>
+      <BreakpointsIndicator />
       <SessionProvider>
         <AnimatePresence>
           <AspectRatio
