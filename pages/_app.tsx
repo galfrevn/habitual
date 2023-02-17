@@ -8,7 +8,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import 'styles/tailwind.css';
 import { Header } from 'components/layout/header';
-import { AspectRatio } from 'components/ui/aspect-ratio';
+import { ThemeProvider } from 'components/context/theme';
 
 const outfit = Outfit({
   variable: '--display-font',
@@ -25,17 +25,16 @@ export default function App({ Component, pageProps }: AppProps) {
           content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
         />
       </Head>
-      <SessionProvider>
-        <AnimatePresence>
-          <AspectRatio
-            ratio={9 / 16}
-            className={`${outfit.variable} font-display max-w-xl mx-auto`}
-          >
-            <Header />
-            <Component {...pageProps} />
-          </AspectRatio>
-        </AnimatePresence>
-      </SessionProvider>
+      <main className={`${outfit.variable} font-display max-w-xl mx-auto`}>
+        <ThemeProvider >
+          <SessionProvider>
+            <AnimatePresence>
+              <Header />
+              <Component {...pageProps} />
+            </AnimatePresence>
+          </SessionProvider>
+        </ThemeProvider>
+      </main>
     </Fragment>
   );
 }
