@@ -25,7 +25,7 @@ export function Navigation() {
               <li className='row-span-3'>
                 <NavigationMenuLink asChild>
                   <Link
-                    className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-sky-400 to-blue-500 p-6 no-underline outline-none focus:shadow-md'
+                    className='flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-sky-400 to-blue-500 p-6 no-underline hover:scale-[0.98] outline-none focus:shadow-md'
                     href='/'
                   >
                     <Calendar className='h-6 w-6 text-white' />

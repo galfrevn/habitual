@@ -72,6 +72,22 @@ model Habit {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   title String
-  decription String?
+  description String?
   icon String
+  hour String
+  color String
+
+  started DateTime @default(now())
+
+  completitions HabitCompletition[]
+}
+
+model HabitCompletition {
+  id String @unique @default(uuid())
+
+  habitId String
+  habit Habit @relation(fields: [habitId], references: [id], onDelete: Cascade)
+
+  date DateTime
+  notes String
 }
