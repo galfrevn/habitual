@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-const NAME = 'Habitual'
+const NAME = 'Habitual';
 const TITLE = 'Habitual | Habits tracker';
 const DESCRIPTION = `Habit tracking app designed to help users maintain healthy habits. 
 Featuring a user-friendly interface and customizable features, users can easily track their
@@ -9,10 +9,10 @@ const URL = 'habits.galfrevn.com';
 
 export default function Document() {
   return (
-    <Html lang='en'>
+    <Html lang='en' suppressHydrationWarning>
       <Head>
         {/* PWA MANIFEST */}
-        <link rel="manifest" href="/manifest.json" />
+        <link rel='manifest' href='/manifest.json' />
         {/* PWA METATAGS */}
         <meta name='application-name' content={NAME} />
         <meta name='apple-mobile-web-app-capable' content='yes' />

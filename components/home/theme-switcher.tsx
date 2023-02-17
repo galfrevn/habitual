@@ -20,7 +20,7 @@ export function ThemeSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button>
-          <Sun className='hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100' />
+          <Sun className='hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100' />
           <span className='sr-only'>Toggle theme</span>
         </button>
       </DropdownMenuTrigger>

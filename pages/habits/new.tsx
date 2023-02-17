@@ -22,12 +22,12 @@ export default function CreateHabitPage({
           <TabsTrigger value='confirmation'>Confirmation</TabsTrigger>
         </TabsList>
         <TabsContent value='details'>
-          <p className='text-sm text-slate-500 dark:text-slate-400'>
+          <p className='text-sm text-neutral-500 dark:text-neutral-400'>
             Make changes to your account here. Click save when you&apos;re done.
           </p>
         </TabsContent>
         <TabsContent value='customization'>
-          <p className='text-sm text-slate-500 dark:text-slate-400'>
+          <p className='text-sm text-neutral-500 dark:text-neutral-400'>
             This is the customization page
           </p>
         </TabsContent>
