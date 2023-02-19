@@ -1,6 +1,6 @@
-export const Icons = ({ icon }: { icon: string }) => {
+export const Icons = ({ icon, props }: any) => {
   const DynamicIcon = require('lucide-react')[icon];
   if (!DynamicIcon) return null;
 
-  return <DynamicIcon />;
+  return <DynamicIcon {...props} />;
 };

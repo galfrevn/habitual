@@ -10,31 +10,28 @@ export default async function awsRegion(
   res: NextApiResponse
 ) {
   await withAuthentication(req, res, async (session: Session) => {
-    await withMethodVerification(['POST'], req, res, async () => {
-      const started = new Date();
-
-      const createdHabit = await prisma.habit.create({
-        data: {
-          ...req.body,
-          started,
+    await withMethodVerification(['GET'], req, res, async () => {
+      const habits = await prisma.habit.findMany({
+        where: {
           user: {
-            connect: {
-              id: session?.user?.id,
-            },
+            id: session.user?.id
           },
         },
+        include: {
+          completitions: true
+        }
       });
 
-      if (!createdHabit)
+      if (!habits)
         return res.status(500).json({
           code: 'prisma_error',
           message:
-            'Something went wrong creating this habit. Please, try again later',
+            'Something went wrong listing your habits. Please, try again later',
         });
 
       res
         .status(200)
-        .send({ message: 'Habit successfully created', data: createdHabit });
+        .send({ message: 'Habits successfully listed', data: habits });
     });
   });
 }

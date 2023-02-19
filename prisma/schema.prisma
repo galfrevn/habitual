@@ -72,7 +72,7 @@ model Habit {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   title String
-  description String?
+  description String @db.Text
   icon String
   hour String
   color String
@@ -88,6 +88,6 @@ model HabitCompletition {
   habitId String
   habit Habit @relation(fields: [habitId], references: [id], onDelete: Cascade)
 
-  date DateTime
-  notes String
+  date DateTime @default(now())
+  notes String?
 }

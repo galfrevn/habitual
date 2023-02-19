@@ -5,23 +5,23 @@ import { Icons } from 'components/ui/icons';
 import { Label } from 'components/ui/label';
 import { Input } from 'components/ui/input';
 import { Textarea } from 'components/ui/textarea';
-import { CreateHabit } from 'components/home/habits/create';
+import { Button } from 'components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/tabs';
 
 import { useCreateHabit } from 'hooks/habits/use-create-habit';
-import { HabitsSingleContainer } from 'components/home/habits/containers';
-import { Button } from 'components/ui/button';
+import { CreateAccount } from 'components/home/finances/create';
+import { AccountsSingleContainer } from 'components/home/finances/containers';
 
-export default function CreateHabitPage({
+export default function CreateAccountPage({
   session,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const { updateHabitField, returnHabitField, createHabit } = useCreateHabit();
 
   return (
     <div className='px-4 mt-4 pb-10'>
-      <HabitsSingleContainer>
-        <CreateHabit />
-      </HabitsSingleContainer>
+      <AccountsSingleContainer>
+        <CreateAccount />
+      </AccountsSingleContainer>
 
       <Tabs defaultValue='details' className='w-full mt-4'>
         <TabsList>
@@ -31,19 +31,19 @@ export default function CreateHabitPage({
         </TabsList>
 
         <TabsContent value='details'>
-          <div className='grid w-full max-w-sm items-center gap-1.5'>
-            <Label htmlFor='title'>
-              Title <span className='text-red-600'>*</span>
+         {/*  <div className='grid w-full max-w-sm items-center gap-1.5'>
+            <Label htmlFor='name'>
+              Account display name <span className='text-red-600'>*</span>
             </Label>
             <Input
-              id='title'
-              value={returnHabitField('title')}
+              id='name'
+              value={returnHabitField('name')}
               placeholder='Take a cold shower'
-              onChange={({ target }) => updateHabitField('title', target.value)}
+              onChange={({ target }) => updateHabitField('name', target.value)}
             />
-          </div>
+          </div> */}
 
-          <div className='grid w-full max-w-sm items-center gap-1.5 mt-5'>
+          {/* <div className='grid w-full max-w-sm items-center gap-1.5 mt-5'>
             <Label htmlFor='description'>Description</Label>
             <Textarea
               id='description'
@@ -56,18 +56,22 @@ export default function CreateHabitPage({
             <p className='text-sm text-neutral-500'>
               Tell us about your new habit!
             </p>
-          </div>
+          </div> */}
 
           <div className='grid w-full max-w-sm items-center gap-1.5 mt-5'>
             <Label htmlFor='hour'>
-              Habit hour <span className='text-red-600'>*</span>
+              Starting ammount <span className='text-red-600'>*</span>
             </Label>
             <Input
               id='hour'
+              type='number'
               placeholder='07:00am'
               value={returnHabitField('hour')}
               onChange={({ target }) => updateHabitField('hour', target.value)}
             />
+            <p className='text-sm text-neutral-500'>
+              Money ammount at time of account creation
+            </p>
           </div>
         </TabsContent>
 
@@ -107,9 +111,13 @@ export default function CreateHabitPage({
             {/* <Calendar className='h-6 w-6 text-white' /> */}
             <Icons icon={returnHabitField('icon')} />
 
-            <div className='mt-4 mb-2 text-lg font-medium text-white'>
-              {returnHabitField('title')}
-            </div>
+            <div
+              className='w-4 h-4'
+              style={{ backgroundColor: returnHabitField('color') }}
+            />
+            {/* <div className='mt-4 mb-2 text-lg font-medium text-white'>
+              {returnHabitField('name')}
+            </div> */}
             <p className='text-sm leading-tight text-white/90'>
               {returnHabitField('description')}
             </p>

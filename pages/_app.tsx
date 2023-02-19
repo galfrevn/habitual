@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import 'styles/tailwind.css';
 import { Header } from 'components/layout/header';
+import { Toaster } from 'components/ui/toaster';
 import { BreakpointsIndicator } from 'components/layout/header/breakpoints';
 import { ThemeProvider } from 'components/context/theme';
 
@@ -36,13 +37,14 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <BreakpointsIndicator />
       <main
-        className={`${outfit.variable} font-display max-w-xl mx-auto antialiased `}
+        className={`${outfit.variable} dark:bg-neutral-900 dark:text-neutral-50 font-display max-w-xl mx-auto antialiased `}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <QueryClientProvider client={queryClient}>
             <Hydrate state={pageProps.dehydratedState}>
               <SessionProvider>
                 <Header />
+                <Toaster />
                 <AnimatePresence>
                   <Component {...pageProps} />
                 </AnimatePresence>

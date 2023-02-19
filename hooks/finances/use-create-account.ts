@@ -16,7 +16,7 @@ const defaultHabitValues: Omit<Habit, 'userId' | 'id'> = {
   started: new Date(),
 };
 
-export const useCreateHabit = () => {
+export const useCreateAccount = () => {
   const { toast } = useToast();
   const { back } = useRouter();
 
@@ -27,7 +27,7 @@ export const useCreateHabit = () => {
     await axios.post('/api/habits/new', data);
 
   const { mutate, data, isLoading, error } = useMutation({
-    mutationKey: ['habits', { ...habit }],
+    mutationKey: ['habit', { ...habit }],
     mutationFn: async () => {
       const data = await createHabitFn(habit);
       return data;
