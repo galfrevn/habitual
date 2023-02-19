@@ -27,7 +27,7 @@ const HabitTrackerAdd = () => {
     setOpenModal,
   } = useAddHabitTrack();
 
-  if (isLoading) return <div className="w-full h-[159px] bg-neutral-500/20 rounded-lg mt-4" />;
+  if (isLoading) return <div className="w-full h-[159px] bg-neutral-500/20 rounded-lg mt-4 animate-pulse" />;
 
   return (
     <Dialog.Dialog open={openModal} onOpenChange={(value) => setOpenModal(value)}>
