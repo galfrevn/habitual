@@ -18,6 +18,20 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 
+import Router from 'next/router';
+import NProgress from 'nprogress'; 
+import 'nprogress/nprogress.css';
+
+NProgress.configure({
+  showSpinner: false,
+  easing: 'ease-out',
+  trickle: false,
+  speed: 600,
+});
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
+
 const outfit = Outfit({
   variable: '--display-font',
 });

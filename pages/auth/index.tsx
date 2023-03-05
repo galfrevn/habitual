@@ -1,31 +1,31 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import { GetServerSidePropsContext } from 'next';
-import { getServerSideSession } from 'lib/server/server-session';
+import { GetServerSidePropsContext } from "next";
+import { getServerSideSession } from "lib/server/server-session";
 
-import { AuthenticationButton } from 'components/auth/button';
-import { motion } from 'framer-motion';
+import { AuthenticationButton } from "components/auth/button";
+import { motion } from "framer-motion";
 
 const Authentication = () => {
   return (
-    <div className='flex min-h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8'>
-      <div className='w-full max-w-md space-y-8'>
+    <div className="flex min-h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md space-y-8">
         <div>
           <motion.div
-            key='login-icon'
+            key="login-icon"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0, transition: { delay: 0.1 } }}
           >
             <Image
               quality={100}
-              className='mx-auto'
-              src='/images/avatar.png'
-              alt='Habits'
+              className="mx-auto"
+              src="/images/avatar.png"
+              alt="Habits"
               width={80}
               height={80}
             />
           </motion.div>
-          <motion.h2
+          {/* <motion.h2
             key='login-h2'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
@@ -43,9 +43,9 @@ const Authentication = () => {
             <span className='font-medium text-indigo-600 hover:text-indigo-500'>
               start your 14-day free trial
             </span>
-          </motion.p>
+          </motion.p> */}
         </div>
-        <div className='mt-8 space-y-6'>
+        {/* <div className='mt-8 space-y-6'>
           <input type='hidden' name='remember' defaultValue='true' />
           <div className='-space-y-px rounded-md shadow-sm'>
             <motion.div
@@ -82,9 +82,9 @@ const Authentication = () => {
                 placeholder='Password'
               />
             </motion.div>
-          </div>
+          </div> */}
 
-          <div className='flex items-center justify-between'>
+        {/* <div className='flex items-center justify-between'>
             <motion.div
               key='login-remember-input'
               initial={{ opacity: 0, y: 20 }}
@@ -115,10 +115,10 @@ const Authentication = () => {
                 Forgot your password?
               </span>
             </motion.div>
-          </div>
+          </div> */}
 
-          <div className='flex flex-col gap-2'>
-            <motion.button
+        <div className="flex flex-col gap-2">
+          {/* <motion.button
               key='login-signin-input'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0, transition: { delay: 0.55 } }}
@@ -126,21 +126,20 @@ const Authentication = () => {
               className='group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
             >
               Sign in
-            </motion.button>
+            </motion.button> */}
 
-            <motion.div
-              key='login-github-input'
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 0.6 } }}
-            >
-              <AuthenticationButton
-                authenticationProviderBgColor='#000'
-                authenticationProviderLabel='GitHub'
-                authenticationProviderName='github'
-                authenticationProviderTextColor='#FFF'
-              />
-            </motion.div>
-          </div>
+          <motion.div
+            key="login-github-input"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0, transition: { delay: 0.6 } }}
+          >
+            <AuthenticationButton
+              authenticationProviderBgColor="#000"
+              authenticationProviderLabel="GitHub"
+              authenticationProviderName="github"
+              authenticationProviderTextColor="#FFF"
+            />
+          </motion.div>
         </div>
       </div>
     </div>
@@ -155,7 +154,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   if (session) {
     return {
       redirect: {
-        destination: '/',
+        destination: "/",
         permanent: false,
       },
     };

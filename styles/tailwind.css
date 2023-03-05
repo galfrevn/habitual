@@ -5,3 +5,7 @@
 * {
   -webkit-tap-highlight-color: transparent;
 }
+
+#nprogress .bar {
+  background: #be123c !important;
+}

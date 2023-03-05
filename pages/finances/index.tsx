@@ -1,18 +1,20 @@
-import { TodayCalendar } from 'components/home/date';
-import FinanceAccount from 'components/home/finances/account';
+import { TodayCalendar } from "components/home/date";
+import { FinanceAccount } from "components/home/finances/account";
+import { FinanceBalance } from "components/home/finances/balance";
 
-import { AccountsSingleContainer } from 'components/home/finances/containers';
-import { CreateAccount } from 'components/home/finances/create';
+import { AccountsSingleContainer } from "components/home/finances/containers";
+import { CreateAccount } from "components/home/finances/create";
 
-import { getServerSideSession } from 'lib/server/server-session';
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
+import { getServerSideSession } from "lib/server/server-session";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 
-export default function Finances({
+export default function Finances(/* {
   session,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetServerSidePropsType<typeof getServerSideProps> */) {
   return (
-    <div className='px-4 mt-4'>
-      <TodayCalendar name={session.user?.name as string} />
+    <div className="px-4 mt-4">
+      <TodayCalendar name="Valentin Galfre" />
+      <FinanceBalance />
       <AccountsSingleContainer>
         <CreateAccount />
         <FinanceAccount />
@@ -21,7 +23,7 @@ export default function Finances({
   );
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
+/* export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSideSession(context);
 
   if (!session) {
@@ -37,3 +39,4 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     props: { session },
   };
 }
+ */

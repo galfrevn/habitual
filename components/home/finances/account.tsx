@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Banknote } from 'lucide-react';
 
-const FinanceAccount = () => {
+export const FinanceAccount = () => {
   return (
     <motion.div
       key='create-habit'
@@ -26,5 +26,3 @@ const FinanceAccount = () => {
     </motion.div>
   );
 };
-
-export default FinanceAccount;
