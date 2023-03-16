@@ -30,7 +30,7 @@
     "lucide-react": "^0.115.0",
     "moment": "^2.29.4",
     "next": "13.1.6",
-    "next-auth": "^4.19.2",
+    "next-auth": "^4.20.1",
     "next-pwa": "^5.6.0",
     "next-themes": "^0.2.1",
     "prisma": "^4.10.1",
