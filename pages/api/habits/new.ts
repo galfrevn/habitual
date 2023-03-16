@@ -22,7 +22,7 @@ export default async function awsRegion(
               id: session?.user?.id,
             },
           },
-        },
+        }
       });
 
       if (!createdHabit)

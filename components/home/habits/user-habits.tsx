@@ -17,9 +17,9 @@ import {
 const HabitsSkeleton = () => (
   <div className='grid gap-4 mt-4'>
     <div className='w-48 h-5 bg-neutral-500/40 rounded-lg' />
-    <div className='w-full h-[126px] bg-neutral-500/20 rounded-lg' />
-    <div className='w-full h-[126px] bg-neutral-500/30 rounded-lg' />
-    <div className='w-full h-[126px] bg-neutral-500/10 rounded-lg' />
+    <div className='w-full h-[126px] bg-neutral-500/20 animate-pulse rounded-lg' />
+    <div className='w-full h-[126px] bg-neutral-500/30 animate-pulse rounded-lg' />
+    <div className='w-full h-[126px] bg-neutral-500/10 animate-pulse rounded-lg' />
   </div>
 );
 
@@ -42,7 +42,7 @@ export function UserHabits() {
   return (
     <div className='grid gap-4 mt-4'>
       <h2 className='font-semibold'>Follow your habits</h2>
-      {data?.data.data.map((habit: HabitsWithCompletitions) => (
+      {data?.data?.data?.map((habit: HabitsWithCompletitions) => (
         <Collapsible key={habit.id} >
           <CollapsibleTrigger className='w-full'>
             <motion.div
