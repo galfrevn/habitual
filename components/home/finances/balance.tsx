@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import CountUp from "react-countup";
 
 export const FinanceBalance = () => {
-  const totalFinanceBalance = async () => await axios.get("/api/habits/list");
+  /* const totalFinanceBalance = async () => await axios.get("/api/habits/list");
   const {
     data: totalBalance,
     isLoading,
@@ -15,7 +15,7 @@ export const FinanceBalance = () => {
   } = useQuery({
     queryKey: ["balance"],
     queryFn: totalFinanceBalance,
-  });
+  }); */
 
   /* if (isLoading) return <HabitsSkeleton />;
   if (error) return <div>Error</div>; */
@@ -25,11 +25,8 @@ export const FinanceBalance = () => {
       <h2 className="text-lg font-medium mt-6">Total balance</h2>
       <div className="flex gap-2 items-center">
         <Banknote />
-        {/* <h2 className="text-3xl font-semibold">$324.432</h2> */}
-        <CountUp end={253213} start={0} duration={2} separator="." prefix="$">
-          {({ countUpRef }) => (
-           <span className="text-3xl font-semibold" ref={countUpRef} />
-          )}
+        <CountUp end={253213} start={0} duration={2} delay={0} separator="." prefix="$">
+          {({ countUpRef }) => <span className="text-3xl font-semibold" ref={countUpRef} />}
         </CountUp>
       </div>
 
